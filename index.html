@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Red+Hat+Texts">
+  
+  <title>Frontend Mentor | Launch countdown timer</title>
+
+
+  <style>
+
+
+  </style>
+</head>
+<body>
+<section>
+  <h1> We're launching soon</h1>
+
+  <span class="grids-cols">
+    <div class="grids">
+      <p id="h" class="d">13</p>
+      <p></p>
+      
+
+    </div>
+    <div class="grids">
+      
+        <p id="h"  class="hour">59</p>
+    
+      
+      <p></p>
+    </div>
+    <div class="grids">
+      <p id="h" class="m">59</p>
+      <p></p>
+    </div>
+    <div class="grids">
+      <p id="h" class="s">59</p>
+      <p></p>
+    </div>
+  </span>
+  
+  <ul>
+    <li>Days</li>
+    <li>Hours</li>
+    <li>Minutes</li>
+    <li>Seconds</li>
+  </ul>
+
+  <div class="icons">
+    <img src="./images/icon-pinterest.svg" alt="">
+    <img src="./images/icon-facebook.svg" alt="">
+    <img src="./images/icon-instagram.svg" alt="">
+  </div>
+
+
+ 
+
+</section>
+
+  <script>
+    var TheDeadline = new Date("Jan 1, 2021 12:00:00").getTime();
+    console.log(TheDeadline);
+    
+
+var x = setInterval(function() {
+
+var now = new Date().getTime();
+
+
+var distance = TheDeadline - now;
+
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.querySelector('.d').innerHTML=days;
+document.querySelector('.hour').innerHTML=hours;
+document.querySelector('.m').innerHTML=minutes;
+document.querySelector('.s').innerHTML=seconds;
+
+
+if (distance < 0) {
+  clearInterval(x);
+  document.querySelector('section').innerHTML = "<h1>Happy New year</h1>";
+}
+}, 1000);
+  </script>
+
+</body>
+</html>

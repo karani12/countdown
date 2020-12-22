@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section{
+  height: 100vh;
+  background: hsl(235, 16%, 14%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-family: 'Red Hat Display', sans-serif;
+  position: relative;
+  flex-wrap: wrap;
+
+
+}
+section::before{
+  content: "";
+  background:url(./images/bg-stars.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100vw;
+  height: 90vh;
+  position: absolute;
+  top: 50px;
+}
+section::after{
+  content: "";
+  background: url(./images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100vw;
+  height: 300px;
+
+}
+h1{
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  word-spacing: 5px;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+.attribution{
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+.grids-cols{
+  display: flex;
+  flex-direction: row;
+
+}
+.grids{
+  width: 100px;
+  margin: 7px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr;
+  place-content: center;
+}
+.grids>p{
+  background-color:  hsl(236, 21%, 26%);
+  margin: 2px;
+  margin-top: 0;
+  width: 60px;
+  height: 40px;
+  border-radius: 5px;
+  color: hsl(345, 95%, 68%);
+  font-weight: 800;
+  font-size: 3rem;
+
+
+}
+#h{
+  z-index: 12;
+  text-align: center;
+  transform: translateY(1px);
+  margin-top: 5px;
+  padding-top: 9px;
+
+}
+ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 460px;
+}
+li{
+  list-style: none;
+  transform: translateX(-7px);
+  text-transform: uppercase;
+}
+ul:nth-child(2){
+  transform: translateX(4px);
+}
+ul:nth-child(3){
+  transform: translateX(2px);
+}
+li:nth-last-child(){
+  transform: translateX(-7px);
+}
+.icons{
+  position: fixed;
+  bottom: 0;
+  z-index: 12;
+
+  
+}
+.icons>img{
+  margin: 3px 7px;
+
+}
+@media(max-width:600px){
+  .section{
+    height: 100vh;
+    background: hsl(235, 16%, 14%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-family: 'Red Hat Display', sans-serif;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  section::before{
+    content: "";
+    background:url(./images/bg-stars.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    top: 50px;
+  }
+  section::after{
+    content: "";
+    background: url(./images/pattern-hills.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100vw;
+    height: 100px;
+  
+  }
+  .grids-cols{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+  }
+  .grids{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-around;
+    width: 50px;
+  }
+  .grids>p{
+    background-color:  hsl(236, 21%, 26%);
+    margin: 2px;
+    margin-top: 0;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    color: hsl(345, 95%, 68%);
+    font-weight: 800;
+    font-size: 2rem;
+    
+
+  
+  }
+  ul>li:nth-child(1){
+    transform: translateX(15px);
+  }
+  ul>li:nth-child(2){
+    transform: translateX(20px);
+  }
+  ul>li:nth-child(3){
+    transform: translateX(10px);
+  }
+  li:nth-last-child(){
+    transform: translateX(0);
+  }
+  .icons{
+    position: absolute;
+    bottom: 0;
+    z-index: 12;
+  
+    
+  }
+  ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+  }
+
+
+}
